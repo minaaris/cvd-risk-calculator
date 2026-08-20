@@ -18,7 +18,14 @@ def input_int(prompt: str, lower: int, upper: int) -> int:
     """
 
     # prompt the user to input a value, store the value as integer
-    value: int = int(input(f"{prompt}({lower}-{upper})"))
+    value = None
+    while value is None:
+        try:
+            value: int = int(input(f"{prompt}({lower}-{upper})"))
+            break
+        except ValueError:
+            print("Please enter a valid number")
+            pass
 
     # check if value is within range
     while value < lower or value > upper:
@@ -43,7 +50,13 @@ def input_float(prompt: str, lower: float, upper: float) -> float:
     """
 
     # prompt the user to input a value, store the value as float
-    value: float = float(input(f"{prompt}({lower}-{upper})"))
+    while True:
+        try:
+            value: float = float(input(f"{prompt}({lower}-{upper})"))
+            break
+        except ValueError:
+            print("Please enter a valid number")
+            pass
 
     # check if value is within range
     while value < lower or value > upper:
