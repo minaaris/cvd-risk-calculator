@@ -2,7 +2,7 @@
 main.py
 
 Main execution module for the Cardiovascular Disease (CVD) Risk Calculator.
-Coordinates user input validation, risk scoring, and session history management.
+Call user input validation, risk scoring, and session history management.
 """
 
 __author__ = "MINERVA VALENTINE"
@@ -208,9 +208,9 @@ def main() -> None:
     """
     Main loop.
     """
-    current_user: User | None = None
-    current_score: float | None = None
-    current_risk: Risk | None = None
+    current_user: User = None
+    current_score: float = None
+    current_risk: Risk = None
 
     while True:
         choice = display_menu()

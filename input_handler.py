@@ -1,5 +1,7 @@
 """
-4.3CR User Input Functions
+input_handler.py 
+
+Process user input
 """
 
 __author__ = "MINERVA VALENTINE"
@@ -114,7 +116,7 @@ def input_menu(prompt: str, options: list[str]) -> int:
     for i, option in enumerate(options, 1):
         print(f"  {i}. {option}")
     
-    # Reuse input_int to strictly validate user boundaries
+    # Reuse input_int to strictly validate user input
     return input_int("Select an option: ", 1, len(options))
 
 
@@ -123,8 +125,9 @@ if __name__ == "__main__":
     stars = -1     #user's star (between 0 and 5)
     volume = -1.0  #continuously variable speaker volume (as a value between 0 and 11)
     again = False  #do they want to try some action again?
+    options = ["Start", "Resume", "Quit"]
 
-    print("Testing input_int... the number should be saved in stars.")
+    print("Test 1 Testing input_int... the number should be saved in stars.")
     print(" - Enter '6' (should loop with error)")
     print(" - Enter '-1' (should loop with error")
     print(" - Enter '2' and it should work")
@@ -132,7 +135,7 @@ if __name__ == "__main__":
     print(f"Star rating: {stars}");
     print()
 
-    print("Testing input_float... the number should be saved in volume.")
+    print("Test 2 Testing input_float... the number should be saved in volume.")
     print(" - Enter '20' (should loop with error)")
     print(" - Enter '-1' (should loop with error)")
     print(" - Enter '9.5' and it should work")
@@ -152,4 +155,11 @@ if __name__ == "__main__":
     print(f"Again: {again}")
     print()
 
+    print("Testing input menu")
+    print("Enter something from the option list and it should work")
+    choice = input_menu("Select", options)
+    print(f"Choice: {choice}")
+    print("Enter something that is not in the option list and it should return an error")
+    choice = input_menu("Select", options)
+    
     print("Tests complete...")

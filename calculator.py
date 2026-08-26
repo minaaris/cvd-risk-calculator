@@ -1,8 +1,9 @@
 """
 calculator.py — CVD risk scoring and classification logic.
 
-A simplified absolute cardiovascular disease (CVD) risk model
-inspired by the Australian absolute CVD risk guidelines.
+A simplified cardiovascular disease (CVD) risk calculator
+inspired by the AustralianCVD risk guidelines
+https://www.cvdcheck.org.au/?utm_source=website&utm_medium=referral&utm_content=guideline-page.
 
 IMPORTANT
 -----------------
